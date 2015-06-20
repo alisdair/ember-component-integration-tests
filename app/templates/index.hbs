@@ -1,0 +1,19 @@
+<div class="alert-banner-container">
+  {{#each alerts as |alert|}}
+    {{alert-banner alert=alert}}
+  {{/each}}
+</div>
+
+<h2>Alert Banner</h2>
+
+<form>
+  <div class="form-group">
+    {{input placeholder="Alert text" value=alertText}}
+  </div>
+
+  <div class="form-group">
+    <button {{action 'createAlert'}} disabled={{createDisabled}}>
+      Create alert
+    </button>
+  </div>
+</form>
