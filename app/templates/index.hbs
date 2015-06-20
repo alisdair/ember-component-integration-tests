@@ -1,6 +1,6 @@
 <div class="alert-banner-container">
   {{#each alerts as |alert|}}
-    {{alert-banner alert=alert}}
+    {{alert-banner alert=alert closeAction=alert.closeAction}}
   {{/each}}
 </div>
 
@@ -9,6 +9,10 @@
 <form>
   <div class="form-group">
     {{input placeholder="Alert text" value=alertText}}
+  </div>
+
+  <div class="form-group">
+    <label>{{input type='checkbox' checked=dismissible}} Dismissible</label>
   </div>
 
   <div class="form-group">
