@@ -40,7 +40,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    // For deployment on GitHub Pages
+    ENV.baseURL = '/ember-component-integration-tests',
+    locationType = 'hash'
   }
 
   return ENV;
