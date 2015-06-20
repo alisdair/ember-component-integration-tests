@@ -13,10 +13,13 @@ export default Ember.Controller.extend({
     }
   }),
 
+  fancy: false,
+
   actions: {
     createAlert() {
       let alert = Alert.create({
         text: this.get('alertText'),
+        fancy: this.get('fancy'),
         closeAction: this.get('closeAction')
       });
       this.get('alerts').pushObject(alert);

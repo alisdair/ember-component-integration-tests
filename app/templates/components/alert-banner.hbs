@@ -3,4 +3,8 @@
     <span aria-hidden="true">×</span>
   </button>
 {{/if}}
-{{text}}
+{{#if hasBlock}}
+  {{yield text}}
+{{else}}
+  {{text}}
+{{/if}}

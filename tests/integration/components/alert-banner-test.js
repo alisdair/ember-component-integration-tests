@@ -47,3 +47,27 @@ test('close button and closeAction', function(assert) {
   });
   $button.click();
 });
+
+test('with optional block for rendering text', function(assert) {
+  assert.expect(3);
+
+  var alert = Alert.create({ text: 'The server is on fire!' });
+  this.set('alert', alert);
+
+  this.render(hbs`
+    {{#alert-banner alert=alert as |text|}}
+      <h3 class="text-danger">Something Went Wrong</h3>
+
+      <p>{{text}}</p>
+    {{/alert-banner}}
+  `);
+
+  var $alert = this.$('.alert-banner');
+  assert.equal($alert.length, 1, 'renders alert');
+
+  var $h3 = $alert.find('h3.text-danger');
+  assert.equal($h3.text().trim(), 'Something Went Wrong', 'renders heading');
+
+  var $p = $alert.find('p');
+  assert.equal($p.text().trim(), 'The server is on fire!', 'renders text');
+});

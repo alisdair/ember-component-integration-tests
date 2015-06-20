@@ -1,6 +1,14 @@
 <div class="alert-banner-container">
   {{#each alerts as |alert|}}
-    {{alert-banner alert=alert closeAction=alert.closeAction}}
+    {{#if alert.fancy}}
+      {{#alert-banner alert=alert closeAction=alert.closeAction as |text|}}
+        <h3 class="text-danger">Something Went Wrong</h3>
+
+        <p>{{text}}</p>
+      {{/alert-banner}}
+    {{else}}
+      {{alert-banner alert=alert closeAction=alert.closeAction}}
+    {{/if}}
   {{/each}}
 </div>
 
@@ -13,6 +21,7 @@
 
   <div class="form-group">
     <label>{{input type='checkbox' checked=dismissible}} Dismissible</label>
+    <label>{{input type='checkbox' checked=fancy}} Fancy</label>
   </div>
 
   <div class="form-group">
