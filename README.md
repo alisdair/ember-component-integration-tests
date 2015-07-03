@@ -1,5 +1,7 @@
 # Ember Component Integration Tests
 
+[![Build Status](https://travis-ci.org/alisdair/ember-component-integration-tests.svg)](https://travis-ci.org/alisdair/ember-component-integration-tests)
+
 A simple example of how to write integration tests for Ember components.
 
 ## Installation
