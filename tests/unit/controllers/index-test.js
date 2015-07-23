@@ -8,19 +8,19 @@ moduleFor('controller:index', 'Unit | Controller | index',  {
 
 test('alerts is an array', function(assert) {
   assert.expect(1);
-  var controller = this.subject();
+  let controller = this.subject();
   assert.equal(Ember.typeOf(controller.get('alerts')), 'array');
 });
 
 test('has default alert text', function(assert) {
   assert.expect(1);
-  var controller = this.subject();
+  let controller = this.subject();
   assert.equal(controller.get('alertText'), 'Alert banner text');
 });
 
 test('creating alerts is disabled when alert text is empty', function(assert) {
   assert.expect(4);
-  var controller = this.subject();
+  let controller = this.subject();
 
   assert.equal(controller.get('createDisabled'), false,
               'create is enabled by default');
@@ -43,7 +43,7 @@ test('creating alerts is disabled when alert text is empty', function(assert) {
 
 test('createAlert action creates an alert with the text', function(assert) {
   assert.expect(2);
-  var controller = this.subject();
+  let controller = this.subject();
 
   Ember.run(() => {
     controller.set('alerts', []);
@@ -58,7 +58,7 @@ test('createAlert action creates an alert with the text', function(assert) {
 
 test('createAlert can create multiple alerts', function(assert) {
   assert.expect(3);
-  var controller = this.subject();
+  let controller = this.subject();
 
   Ember.run(() => {
     controller.set('alerts', []);

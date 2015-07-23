@@ -14,6 +14,6 @@ test('flips a table with the text', function(assert) {
     {{table-flip message}}
   `);
 
-  var text = this.$('').text().trim();
+  let text = this.$('').text().trim();
   assert.equal(text, '(╯°□°）╯︵ ┻━┻) My coffee is cold!');
 });

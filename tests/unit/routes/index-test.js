@@ -1,15 +1,12 @@
 import { moduleFor, test } from 'ember-qunit';
 import Ember from 'ember';
 
-moduleFor('route:index', 'Unit | Route | index',  {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
-});
+moduleFor('route:index', 'Unit | Route | index');
 
 test('resets alerts array on controller', function(assert) {
   assert.expect(2);
-  var route = this.subject();
-  var controller = Ember.Object.create({
+  let route = this.subject();
+  let controller = Ember.Object.create({
     alerts: ['One alert']
   });
 

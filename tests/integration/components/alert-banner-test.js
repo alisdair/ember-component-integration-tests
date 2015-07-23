@@ -9,14 +9,14 @@ moduleForComponent('alert-banner', 'Integration | Component | alert banner', {
 test('renders text in element with class alert-banner', function(assert) {
   assert.expect(2);
 
-  var alert = Alert.create({ text: 'Hello, world!' });
+  let alert = Alert.create({ text: 'Hello, world!' });
   this.set('alert', alert);
 
   this.render(hbs`
     {{alert-banner alert=alert}}
   `);
 
-  var $alert = this.$('.alert-banner');
+  let $alert = this.$('.alert-banner');
   assert.equal($alert.length, 1, 'alert banner is rendered');
 
   assert.equal($alert.text().trim(), 'Hello, world!', 'alert includes text');
@@ -25,7 +25,7 @@ test('renders text in element with class alert-banner', function(assert) {
 test('close button and closeAction', function(assert) {
   assert.expect(3);
 
-  var alert = Alert.create({ text: 'Hello, world!' });
+  let alert = Alert.create({ text: 'Hello, world!' });
   this.set('alert', alert);
 
   this.set('closeAction', null);
@@ -34,7 +34,7 @@ test('close button and closeAction', function(assert) {
     {{alert-banner alert=alert closeAction=closeAction}}
   `);
 
-  var $button = this.$('.alert-banner button');
+  let $button = this.$('.alert-banner button');
   assert.equal($button.length, 0, 'no close button if no closeAction');
 
   this.set('closeAction', 'removeAlert');
@@ -51,7 +51,7 @@ test('close button and closeAction', function(assert) {
 test('with optional block for rendering text', function(assert) {
   assert.expect(3);
 
-  var alert = Alert.create({ text: 'The server is on fire!' });
+  let alert = Alert.create({ text: 'The server is on fire!' });
   this.set('alert', alert);
 
   this.render(hbs`
@@ -62,20 +62,20 @@ test('with optional block for rendering text', function(assert) {
     {{/alert-banner}}
   `);
 
-  var $alert = this.$('.alert-banner');
+  let $alert = this.$('.alert-banner');
   assert.equal($alert.length, 1, 'renders alert');
 
-  var $h3 = $alert.find('h3.text-danger');
+  let $h3 = $alert.find('h3.text-danger');
   assert.equal($h3.text().trim(), 'Something Went Wrong', 'renders heading');
 
-  var $p = $alert.find('p');
+  let $p = $alert.find('p');
   assert.equal($p.text().trim(), 'The server is on fire!', 'renders text');
 });
 
 test('with optional block which renders links', function(assert) {
   assert.expect(3);
 
-  var alert = Alert.create({ text: 'The server is on fire!' });
+  let alert = Alert.create({ text: 'The server is on fire!' });
   this.set('alert', alert);
 
   this.render(hbs`
@@ -86,12 +86,12 @@ test('with optional block which renders links', function(assert) {
     {{/alert-banner}}
   `);
 
-  var $alert = this.$('.alert-banner');
+  let $alert = this.$('.alert-banner');
   assert.equal($alert.length, 1, 'renders alert');
 
-  var $p = $alert.find('p');
+  let $p = $alert.find('p');
   assert.equal($p.text().trim(), 'The server is on fire!', 'renders text');
 
-  var $a = $alert.find('div a');
+  let $a = $alert.find('div a');
   assert.equal($a.text().trim(), 'Go home', 'renders "Go home" link');
 });
