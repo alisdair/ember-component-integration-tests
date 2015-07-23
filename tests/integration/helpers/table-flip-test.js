@@ -1,6 +1,5 @@
 import hbs from 'htmlbars-inline-precompile';
 import { moduleForComponent, test } from 'ember-qunit';
-import Alert from 'component-integration-tests/models/alert';
 
 moduleForComponent('table-flip', 'Integration | Helper | table flip', {
   integration: true
