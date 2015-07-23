@@ -71,3 +71,27 @@ test('with optional block for rendering text', function(assert) {
   var $p = $alert.find('p');
   assert.equal($p.text().trim(), 'The server is on fire!', 'renders text');
 });
+
+test('with optional block which renders links', function(assert) {
+  assert.expect(3);
+
+  var alert = Alert.create({ text: 'The server is on fire!' });
+  this.set('alert', alert);
+
+  this.render(hbs`
+    {{#alert-banner alert=alert as |text|}}
+      <p>{{text}}</p>
+
+      <div>{{link-to 'Go home' 'index'}}</div>
+    {{/alert-banner}}
+  `);
+
+  var $alert = this.$('.alert-banner');
+  assert.equal($alert.length, 1, 'renders alert');
+
+  var $p = $alert.find('p');
+  assert.equal($p.text().trim(), 'The server is on fire!', 'renders text');
+
+  var $a = $alert.find('div a');
+  assert.equal($a.text().trim(), 'Go home', 'renders "Go home" link');
+});
