@@ -21,3 +21,6 @@ install:
 
 script:
   - ember try:testall
+
+after_script:
+  - codeclimate-test-reporter < lcov.dat
