@@ -6,9 +6,9 @@ var options = {
   filter: /^component-integration-tests\//,
   antifilter: [
     'component-integration-tests/initializers/export-application-global',
-    'component-integration-tests/initializers/app-version',
-    'component-integration-tests/controllers/array.js',
-    'component-integration-tests/controllers/object.js',
+    'component-integration-tests/instance-initializers/app-version',
+    'component-integration-tests/controllers/array',
+    'component-integration-tests/controllers/object',
     '/tests/',
     '/config/',
     '/templates/',
