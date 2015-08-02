@@ -1,6 +1,7 @@
 # Ember Component Integration Tests
 
 [![Build Status](https://travis-ci.org/alisdair/ember-component-integration-tests.svg)](https://travis-ci.org/alisdair/ember-component-integration-tests)
+[![Code Climate](https://codeclimate.com/github/alisdair/ember-component-integration-tests/badges/gpa.svg)](https://codeclimate.com/github/alisdair/ember-component-integration-tests)
 [![Test Coverage](https://codeclimate.com/github/alisdair/ember-component-integration-tests/badges/coverage.svg)](https://codeclimate.com/github/alisdair/ember-component-integration-tests/coverage)
 
 A simple example of how to write integration tests for Ember components.
