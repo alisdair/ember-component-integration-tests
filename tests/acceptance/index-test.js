@@ -19,14 +19,11 @@ test('creating alert with demo form', function(assert) {
     assert.equal(find('.alert-banner').length, 0, 'no alerts by default');
   });
 
-  fillIn('input[placeholder="Alert text"]', 'My alert text here').then(() => {
-    return click('input[type=checkbox]:eq(0)');
-  }).then(() => {
-    return click('button:contains(Create alert)');
-  }).then(() => {
-    let alert = find('.alert-banner');
-    assert.equal(alert.length, 1, 'alert created');
-    assert.equal(alert.text().trim(), 'My alert text here', 'shows text');
+  fillIn('input[placeholder="Alert text"]', 'My alert text here');
+
+  click('button:contains(Create alert)').then(() => {
+    assert.equal(find('.alert-banner:contains(My alert text here)').length, 1,
+                 'shows alert banner with my text');
   });
 });
 
