@@ -29,3 +29,17 @@ test('creating alert with demo form', function(assert) {
     assert.equal(alert.text().trim(), 'My alert text here', 'shows text');
   });
 });
+
+test('closing alert', function(assert) {
+  visit('/');
+
+  fillIn('input[placeholder="Alert text"]', 'Alert');
+
+  click('button:contains(Create alert)').then(() => {
+    assert.equal(find('.alert-banner').length, 1, 'alert created');
+  });
+
+  click('.alert-banner button.close').then(() => {
+    assert.equal(find('.alert-banner').length, 0, 'alert closed');
+  });
+});
