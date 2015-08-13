@@ -5,15 +5,16 @@ var options = {
   modulePrefix: 'component-integration-tests',
   filter: /^component-integration-tests\//,
   antifilter: [
+    'component-integration-tests/components/app-version',
     'component-integration-tests/initializers/export-application-global',
-    'component-integration-tests/instance-initializers/app-version',
-    'component-integration-tests/controllers/array',
-    'component-integration-tests/controllers/object',
+    'component-integration-tests/initializers/app-version',
     '/tests/',
     '/config/',
     '/templates/',
   ],
-  loaderExclusions: [],
+  loaderExclusions: [
+    'component-integration-tests/acceptance-tests',
+  ],
   enableCoverage: true,
   cliOptions: {
     lcovOptions: {
